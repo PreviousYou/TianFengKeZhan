@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavMessageListBasicCell" rowHeight="76" id="O8S-i6-kj9" customClass="FavMessageListBasicCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O8S-i6-kj9" id="lRr-wp-j1P">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Wy-EE-EW9">
+                        <rect key="frame" x="5" y="5" width="310" height="57"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="294" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-mh-yN7">
+                                <rect key="frame" x="8" y="10" width="294" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="294" translatesAutoresizingMaskIntoConstraints="NO" id="GTm-aA-SCD">
+                                <rect key="frame" x="8" y="30" width="294" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.4823529412" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lqd-mh-yN7" firstAttribute="top" secondItem="5Wy-EE-EW9" secondAttribute="top" constant="10" id="1Of-05-lrG"/>
+                            <constraint firstItem="GTm-aA-SCD" firstAttribute="leading" secondItem="5Wy-EE-EW9" secondAttribute="leading" constant="8" id="6fW-KN-q8g"/>
+                            <constraint firstItem="lqd-mh-yN7" firstAttribute="leading" secondItem="5Wy-EE-EW9" secondAttribute="leading" constant="8" id="8IH-ST-Qbi"/>
+                            <constraint firstAttribute="trailing" secondItem="GTm-aA-SCD" secondAttribute="trailing" constant="8" id="CcA-I0-eIu"/>
+                            <constraint firstItem="GTm-aA-SCD" firstAttribute="top" secondItem="lqd-mh-yN7" secondAttribute="bottom" constant="2" id="Rus-Za-YZM"/>
+                            <constraint firstAttribute="trailing" secondItem="lqd-mh-yN7" secondAttribute="trailing" constant="8" id="Zya-yP-ExU"/>
+                            <constraint firstAttribute="bottom" secondItem="GTm-aA-SCD" secondAttribute="bottom" constant="8" id="eFJ-Wh-daB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="5Wy-EE-EW9" secondAttribute="bottom" constant="5" id="Au2-dY-gXQ"/>
+                    <constraint firstItem="5Wy-EE-EW9" firstAttribute="leading" secondItem="lRr-wp-j1P" secondAttribute="leading" constant="5" id="KCs-gA-7aZ"/>
+                    <constraint firstItem="5Wy-EE-EW9" firstAttribute="top" secondItem="lRr-wp-j1P" secondAttribute="top" constant="5" id="n3b-O7-CAb"/>
+                    <constraint firstAttribute="trailing" secondItem="5Wy-EE-EW9" secondAttribute="trailing" constant="5" id="ovF-4O-ivh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="lblSubtitle" destination="GTm-aA-SCD" id="ISN-iF-lF1"/>
+                <outlet property="lblTitle" destination="lqd-mh-yN7" id="XPg-aY-c07"/>
+                <outlet property="viewContainer" destination="5Wy-EE-EW9" id="tNj-ks-1ey"/>
+            </connections>
+            <point key="canvasLocation" x="376" y="427"/>
+        </tableViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ggO-wx-DZa">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--搜索-->
+        <scene sceneID="L3C-hJ-K0N">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" hidesBottomBarWhenPushed="YES" id="jQb-pJ-O6T" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ogB-ED-J1M"/>
+                        <viewControllerLayoutGuide type="bottom" id="KYe-Le-ML7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6NN-Ny-ldt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入搜索内容" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xqH-4W-ZIT">
+                                <rect key="frame" x="16" y="84" width="288" height="32"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="kDo-tb-dtL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jQb-pJ-O6T" id="0V4-nc-qQ9"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关键词" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P97-FD-DtU">
+                                <rect key="frame" x="20" y="130" width="39" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.33725490196078434" green="0.33725490196078434" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g0b-tG-5ZX">
+                                <rect key="frame" x="15" y="153" width="290" height="1"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Rlw-0O-2sp"/>
+                                </constraints>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A7i-OH-rqE">
+                                <rect key="frame" x="16" y="162" width="288" height="398"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P97-FD-DtU" firstAttribute="top" secondItem="xqH-4W-ZIT" secondAttribute="bottom" constant="14" id="2vz-Wf-c9D"/>
+                            <constraint firstItem="P97-FD-DtU" firstAttribute="leading" secondItem="6NN-Ny-ldt" secondAttribute="leading" constant="20" id="6i1-jT-6Uu"/>
+                            <constraint firstAttribute="trailing" secondItem="xqH-4W-ZIT" secondAttribute="trailing" constant="16" id="7jD-5U-lud"/>
+                            <constraint firstAttribute="trailing" secondItem="g0b-tG-5ZX" secondAttribute="trailing" constant="15" id="CJU-J6-jeh"/>
+                            <constraint firstItem="g0b-tG-5ZX" firstAttribute="top" secondItem="P97-FD-DtU" secondAttribute="bottom" constant="7" id="S9J-Ge-8Ow"/>
+                            <constraint firstItem="A7i-OH-rqE" firstAttribute="leading" secondItem="6NN-Ny-ldt" secondAttribute="leading" constant="16" id="UsK-Qp-s1H"/>
+                            <constraint firstItem="A7i-OH-rqE" firstAttribute="top" secondItem="g0b-tG-5ZX" secondAttribute="bottom" constant="8" id="dF1-7h-9j4"/>
+                            <constraint firstItem="KYe-Le-ML7" firstAttribute="top" secondItem="A7i-OH-rqE" secondAttribute="bottom" constant="8" id="i2V-0p-zq7"/>
+                            <constraint firstItem="xqH-4W-ZIT" firstAttribute="top" secondItem="ogB-ED-J1M" secondAttribute="bottom" constant="20" id="mm1-p3-Gdf"/>
+                            <constraint firstItem="xqH-4W-ZIT" firstAttribute="leading" secondItem="6NN-Ny-ldt" secondAttribute="leading" constant="16" id="pev-aX-J8t"/>
+                            <constraint firstAttribute="trailing" secondItem="A7i-OH-rqE" secondAttribute="trailing" constant="16" id="vxO-jX-zEG"/>
+                            <constraint firstItem="g0b-tG-5ZX" firstAttribute="leading" secondItem="6NN-Ny-ldt" secondAttribute="leading" constant="15" id="yPg-cv-P9s"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="搜索" id="UZ8-ds-bBE"/>
+                    <connections>
+                        <outlet property="lblCloudTitle" destination="P97-FD-DtU" id="1UU-Pe-Dbo"/>
+                        <outlet property="scrView" destination="A7i-OH-rqE" id="nNU-BK-fTP"/>
+                        <outlet property="seperatorLineHeight" destination="Rlw-0O-2sp" id="shM-RD-uCs"/>
+                        <outlet property="textFieldKeyword" destination="xqH-4W-ZIT" id="yfC-Cv-LiH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QOQ-ez-jKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763" y="170"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tle-mQ-bT3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ggO-wx-DZa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vJK-4K-VVh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jQb-pJ-O6T" kind="relationship" relationship="rootViewController" id="e2I-FF-aRk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TgV-F9-Vid" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="348" y="170"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

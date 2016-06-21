@@ -1,0 +1,26 @@
+//
+//  CustomTabBarConreoller.h
+//  Project1
+//
+//  Created by LX on 15/9/23.
+//  Copyright (c) 2015年 LX. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface CustomTabBarConreoller : UITabBarController
+@property (strong, nonatomic) NSMutableArray *imageURLArray;
+@property (strong, nonatomic) NSMutableArray *titleArray;
+@property (assign, nonatomic) NSInteger lastIndex;//上一次点击
+@property (assign, nonatomic) NSInteger currentIndex;//当前的数
+@end
+
+
+@interface CustomTabItem : UIButton;
+@property (assign, nonatomic) NSInteger index;
+@property (copy, nonatomic) NSString *URL;
+@property (copy, nonatomic) NSString *title;
+
+- (void)changImageAndTitle:(BOOL)isSelceted;
+-(id)initWithFrame:(CGRect)frame URL:(NSString *)URL title:(NSString *)title;
+@end

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>imgUrl</key>
+		<string>bundle://home_metro1</string>
+		<key>code</key>
+		<string>bzzx</string>
+		<key>type</key>
+		<string>0</string>
+		<key>subjectId</key>
+		<string></string>
+		<key>reqUrl</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>imgUrl</key>
+		<string>bundle://home_metro2</string>
+		<key>code</key>
+		<string>ygzzl</string>
+		<key>type</key>
+		<string>0</string>
+		<key>subjectId</key>
+		<string>1001</string>
+		<key>reqUrl</key>
+		<string></string>
+	</dict>
+</array>
+</plist>

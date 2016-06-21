@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavVideoListCell" rowHeight="219" id="Eil-wS-gQI" customClass="FavVideoListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eil-wS-gQI" id="Ujg-nn-jx3">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="mSB-vq-ae4">
+                        <rect key="frame" x="5" y="5" width="310" height="199"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_310x170" translatesAutoresizingMaskIntoConstraints="NO" id="Qpc-Kb-VOF">
+                                <rect key="frame" x="0.0" y="0.0" width="310" height="170"/>
+                            </imageView>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqX-wX-3sg">
+                                <rect key="frame" x="0.0" y="0.0" width="310" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eqX-wX-3sg" secondAttribute="height" multiplier="31:17" id="qxQ-8P-lQx"/>
+                                </constraints>
+                                <state key="normal" image="btnPlay">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" placeholderIntrinsicWidth="294" placeholderIntrinsicHeight="17" text="标题" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="294" translatesAutoresizingMaskIntoConstraints="NO" id="DYT-po-427">
+                                <rect key="frame" x="8" y="174" width="294" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eqX-wX-3sg" firstAttribute="leading" secondItem="Qpc-Kb-VOF" secondAttribute="leading" id="4eh-1A-Zgs"/>
+                            <constraint firstItem="eqX-wX-3sg" firstAttribute="bottom" secondItem="Qpc-Kb-VOF" secondAttribute="bottom" id="5Wz-Gq-u2S"/>
+                            <constraint firstItem="eqX-wX-3sg" firstAttribute="leading" secondItem="mSB-vq-ae4" secondAttribute="leading" id="HsW-C5-hvb"/>
+                            <constraint firstAttribute="trailing" secondItem="eqX-wX-3sg" secondAttribute="trailing" id="QlJ-C9-olx"/>
+                            <constraint firstItem="DYT-po-427" firstAttribute="top" secondItem="eqX-wX-3sg" secondAttribute="bottom" constant="4" id="Si7-Sm-MmD"/>
+                            <constraint firstItem="DYT-po-427" firstAttribute="leading" secondItem="mSB-vq-ae4" secondAttribute="leading" constant="8" id="fb6-OC-W6K"/>
+                            <constraint firstItem="eqX-wX-3sg" firstAttribute="top" secondItem="Qpc-Kb-VOF" secondAttribute="top" id="gDI-5b-1io"/>
+                            <constraint firstItem="eqX-wX-3sg" firstAttribute="top" secondItem="mSB-vq-ae4" secondAttribute="top" id="hER-PP-oYR"/>
+                            <constraint firstAttribute="bottom" secondItem="DYT-po-427" secondAttribute="bottom" constant="8" id="jFE-xz-mhF"/>
+                            <constraint firstAttribute="trailing" secondItem="DYT-po-427" secondAttribute="trailing" constant="8" id="xaa-xT-4ib"/>
+                            <constraint firstItem="eqX-wX-3sg" firstAttribute="trailing" secondItem="Qpc-Kb-VOF" secondAttribute="trailing" id="zYG-L9-Qfk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="mSB-vq-ae4" firstAttribute="top" secondItem="Ujg-nn-jx3" secondAttribute="top" constant="5" id="2g6-fc-KiM"/>
+                    <constraint firstItem="mSB-vq-ae4" firstAttribute="leading" secondItem="Ujg-nn-jx3" secondAttribute="leading" constant="5" id="4In-bg-8Xx"/>
+                    <constraint firstAttribute="bottom" secondItem="mSB-vq-ae4" secondAttribute="bottom" constant="5" id="Adb-Ss-LpW"/>
+                    <constraint firstAttribute="trailing" secondItem="mSB-vq-ae4" secondAttribute="trailing" constant="5" id="zl8-uk-wzc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="imgView" destination="Qpc-Kb-VOF" id="UVO-vg-8xV"/>
+                <outlet property="lblTitle" destination="DYT-po-427" id="tAD-2e-bJD"/>
+                <outlet property="viewContainer" destination="mSB-vq-ae4" id="fVe-94-KHx"/>
+            </connections>
+            <point key="canvasLocation" x="497" y="523"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="btnPlay" width="56" height="56"/>
+        <image name="placeholder_310x170" width="314" height="170"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OVB-Zb-3kI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--咨询-->
+        <scene sceneID="36h-ZV-kfd">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" id="OVB-Zb-3kI" customClass="ChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J8X-Ki-GQY"/>
+                        <viewControllerLayoutGuide type="bottom" id="n0d-3C-ZkF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8q5-XY-GQ5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SwK-J1-g5P">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SwK-J1-g5P" firstAttribute="top" secondItem="8q5-XY-GQ5" secondAttribute="top" id="QmN-al-67P"/>
+                            <constraint firstAttribute="trailing" secondItem="SwK-J1-g5P" secondAttribute="trailing" id="TAD-q4-8t3"/>
+                            <constraint firstAttribute="bottom" secondItem="SwK-J1-g5P" secondAttribute="bottom" id="n34-oe-y9V"/>
+                            <constraint firstItem="SwK-J1-g5P" firstAttribute="leading" secondItem="8q5-XY-GQ5" secondAttribute="leading" id="upB-bq-fSI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="咨询" id="BgJ-yt-LKl"/>
+                    <connections>
+                        <outlet property="webView" destination="SwK-J1-g5P" id="4Uu-ZY-nvC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O44-1W-DeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202" y="395"/>
+        </scene>
+        <!--咨询-->
+        <scene sceneID="dL6-Mb-kI6">
+            <objects>
+                <navigationController id="8SX-Kh-cs5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="咨询" image="tabbar_item4" id="HRc-IO-Qr9">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="tabbar_item4_selected"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OcS-OY-uFh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="OVB-Zb-3kI" kind="relationship" relationship="rootViewController" id="4BL-3t-qhB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zba-Bd-sIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-220" y="395"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_item4" width="24" height="24"/>
+        <image name="tabbar_item4_selected" width="24" height="24"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

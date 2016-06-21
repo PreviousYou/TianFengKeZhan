@@ -1,0 +1,280 @@
+//
+//  ScrollPagesView.m
+//  wozaijinan
+//
+//  Created by 杜保全 on 15/1/7.
+//  Copyright (c) 2015年 StoneArk. All rights reserved.
+//
+
+#import "ScrollPagesView.h"
+#import "ScrollPagesViewController.h"
+#import "CommonFunction.h"
+#import "LoginedUserHandler.h"
+#import "LoginViewController.h"
+#import "UIStoryboard+SAGetter.h"
+#import "UIView+viewController.h"
+#import "HomeViewController.h"
+#import "AnnounceViewController.h"
+#import "DiscussViewController.h"
+
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define ScrollNotification @"ScrollNotification"
+
+
+typedef NS_ENUM(NSUInteger, ScrollingType){
+    //    向右滑
+    ScrollingRightType,
+    //    向左滑
+    ScrollingleftType
+};
+
+@implementation ScrollPagesView
+
+-(id)initWithFrame:(CGRect)frame iewControllers:(NSArray*)viewControllers atPage:(NSInteger)page{
+    
+    self  = [super initWithFrame:frame];
+    
+    if (self) {
+        
+        self.currentPage = page;
+        self.viewControllers = viewControllers;
+        self.visibleViews = [NSMutableArray array];
+        
+        self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT)];
+        
+        
+        self.scrollView.showsVerticalScrollIndicator = NO;
+        self.scrollView.showsHorizontalScrollIndicator = NO;
+        self.scrollView.pagingEnabled = YES;
+        self.scrollView.delegate = self;
+        [self.scrollView setContentSize:CGSizeMake(SCREENWIDTH * viewControllers.count, SCREENHEIGHT - 20 - 44 - 49)];
+        
+        
+        for (int i = 0; i < self.viewControllers.count; i ++) {
+            
+            UIViewController *viewController = self.viewControllers[i];
+            
+            viewController.view.frame = CGRectMake(SCREENWIDTH * i, 0, SCREENWIDTH, SCREENHEIGHT - 20 - 44 - 49);
+            
+            [self.scrollView addSubview:viewController.view];
+        }
+        
+        [self addSubview:self.scrollView];
+        
+        self.userInteractionEnabled = YES;
+        self.scrollView.bounces = NO;
+        
+    }
+    
+    return self;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+
+    if (self.ScrollingType == ScrollingRightType) {
+        
+        if (![LoginedUserHandler loginedUser].logined) {
+            
+            if (self.currentPage == 3) {
+                
+                self.scrollView.scrollEnabled = NO;
+            
+            }
+        }
+    }
+
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+
+    if (self.ScrollingType == ScrollingRightType) {
+        
+        if (![LoginedUserHandler loginedUser].logined) {
+            
+            if (self.currentPage == 2) {
+                
+                LGAlertView *alertView3 = [[LGAlertView alloc]initWithTitle:nil message:@"\n请您先登录账号。\n" buttonTitles:@[@"确认"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil];
+                
+                alertView3.delegate = self;
+                
+                [CommonFunction setStyleOfLGAlertView:alertView3];
+                
+                [alertView3 showAnimated:YES completionHandler:nil];
+                self.scrollView.scrollEnabled = NO;
+                
+                
+            }else if (self.currentPage == 3) {
+            
+                LGAlertView *alertView4 = [[LGAlertView alloc]initWithTitle:nil message:@"\n请您先登录账号。\n" buttonTitles:@[@"确认"] cancelButtonTitle:@"取消" destructiveButtonTitle:nil];
+                
+                alertView4.delegate = self;
+                
+                [CommonFunction setStyleOfLGAlertView:alertView4];
+                
+                [alertView4 showAnimated:YES completionHandler:nil];
+                self.scrollView.scrollEnabled = NO;
+            
+            }
+        }
+    }
+
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    if (scrollView.contentOffset.x <self.currentContentOffsetX) {
+        
+        if (self.currentPage>=0) {
+            
+            self.ScrollingType = ScrollingleftType;
+        }
+        
+    }else if (scrollView.contentOffset.x > self.currentContentOffsetX ){
+        
+        if ((self.currentPage+1)<=(self.viewControllers.count-1)) {
+            
+            self.ScrollingType = ScrollingRightType;
+        }
+    }
+    
+    self.currentContentOffsetX = scrollView.contentOffset.x;
+    self.currentPage = (int)(scrollView.contentOffset.x / SCREENWIDTH);
+    
+}
+
+
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    if (self.ScrollingType == ScrollingleftType) {
+       
+        NSDictionary *dic = @{
+                              @"index":[NSNumber numberWithInteger:self.currentPage ]
+                              };
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:ScrollNotification object:nil userInfo:dic];
+        
+    }else if (self.ScrollingType == ScrollingRightType) {
+        
+        NSDictionary *dic = @{
+                              @"index":[NSNumber numberWithInteger:self.currentPage ]
+                              };
+        
+        if (self.currentPage  <= 4) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:ScrollNotification object:nil userInfo:dic];
+        }
+    }
+    
+    [self reloadNavigationItem];
+}
+
+
+- (void)reloadNavigationItem {
+
+    ScrollPagesViewController *scrollPagesVC = (ScrollPagesViewController *)[self viewController];
+    
+    HomeViewController *homeVC = self.viewControllers[0];
+    AnnounceViewController *annVC = self.viewControllers[1];
+    DiscussViewController *disVC = self.viewControllers[2];
+    
+    
+    switch (self.currentPage) {
+        case 0:
+            
+            [scrollPagesVC.navigationItem setTitleView:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"nav_titleLogo"]]];
+            scrollPagesVC.navigationItem.leftBarButtonItem = homeVC.leftBarButonItem;
+            scrollPagesVC.navigationItem.rightBarButtonItem = homeVC.rightBarBtttonItem;
+            
+            break;
+        case 1:
+            
+            scrollPagesVC.navigationItem.titleView = nil;
+            scrollPagesVC.navigationItem.rightBarButtonItem = annVC.rightBarButtonItem;
+            scrollPagesVC.navigationItem.leftBarButtonItem = nil;
+            
+            break;
+            
+        case 2:
+            
+            scrollPagesVC.navigationItem.titleView = nil;
+            scrollPagesVC.navigationItem.leftBarButtonItem = disVC.leftBarButtonItem;
+            scrollPagesVC.navigationItem.rightBarButtonItem = disVC.rightBarButtonItem;
+            
+            break;
+            
+        case 3:
+            
+            scrollPagesVC.navigationItem.titleView = nil;
+            scrollPagesVC.navigationItem.leftBarButtonItem = nil;
+            scrollPagesVC.navigationItem.rightBarButtonItem = nil;
+            
+            break;
+            
+        case 4:
+            
+            scrollPagesVC.navigationItem.titleView = nil;
+            scrollPagesVC.navigationItem.leftBarButtonItem = nil;
+            scrollPagesVC.navigationItem.rightBarButtonItem = nil;
+            
+            break;
+            
+        default:
+            break;
+    }
+
+}
+
+- (void)pushLoginViewController:(NSInteger )index {
+    
+    //    未登录，禁止切换到个人中心，在首页跳转入登录页
+    LoginViewController *viewController = [[UIStoryboard userLoginStoryboard] instantiateInitialViewController];
+    
+    UINavigationController *naviga = [self viewController].navigationController;
+    
+    [naviga pushViewController:viewController animated:YES];
+    
+}
+
+- (void)alertView:(LGAlertView *)alertView buttonPressedWithTitle:(NSString *)title index:(NSUInteger)index {
+    
+    [self pushLoginViewController:3];
+    
+    ScrollPagesViewController *scrollPage = (ScrollPagesViewController *)[self viewController];
+    
+    [scrollPage scrollToPage:2 animation:YES];
+    
+    NSDictionary *dic = @{
+                          @"index":[NSNumber numberWithInteger:2 ]
+                          };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:ScrollNotification object:nil userInfo:dic];
+
+    self.scrollView.scrollEnabled = YES;
+    
+}
+
+- (void)alertViewCancelled:(LGAlertView *)alertView {
+    
+    ScrollPagesViewController *scrollPagesController = (ScrollPagesViewController *)[self viewController];
+    
+    [scrollPagesController scrollToPage:2 animation:YES];
+    
+    NSDictionary *dic = @{
+                          @"index":[NSNumber numberWithInteger:2 ]
+                          };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:ScrollNotification object:nil userInfo:dic];
+    [self.scrollView setContentSize:CGSizeMake(SCREENWIDTH * self.viewControllers.count, SCREENHEIGHT - 20 - 44 - 49)];
+    self.scrollView.scrollEnabled = YES;
+}
+
+
+- (void)dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+@end

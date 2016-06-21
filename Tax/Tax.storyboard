@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5fG-BA-SXe">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--办税-->
+        <scene sceneID="Knc-8p-kVO">
+            <objects>
+                <tableViewController id="5fG-BA-SXe" customClass="TaxViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="104" sectionHeaderHeight="22" sectionFooterHeight="22" id="Uqo-7e-R4c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择已绑定需要办税纳税人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S8C-4E-eoc">
+                            <rect key="frame" x="0.0" y="64" width="320" height="70"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="8dD-Ih-1UP">
+                            <rect key="frame" x="0.0" y="216" width="320" height="66"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZG2-ol-mqN">
+                                    <rect key="frame" x="15" y="10" width="290" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="lFI-VI-5B7"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" title="使用其他纳税号登录" backgroundImage="color_highlighted">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="color_highlighted"/>
+                                    <connections>
+                                        <action selector="btnFooterClick:" destination="5fG-BA-SXe" eventType="touchUpInside" id="JPO-Ux-O8a"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ZG2-ol-mqN" secondAttribute="trailing" constant="15" id="5Sg-Os-O3T"/>
+                                <constraint firstItem="ZG2-ol-mqN" firstAttribute="top" secondItem="8dD-Ih-1UP" secondAttribute="top" constant="10" id="Hqp-Ve-VH1"/>
+                                <constraint firstItem="ZG2-ol-mqN" firstAttribute="leading" secondItem="8dD-Ih-1UP" secondAttribute="leading" constant="15" id="IR4-Lz-3vH"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaxCompanyListCell" rowHeight="60" id="Lcz-zL-fbf" customClass="TaxCompanyListCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lcz-zL-fbf" id="jeS-z0-iQQ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyC-dm-HHI">
+                                            <rect key="frame" x="15" y="10" width="290" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="MrC-mQ-Rkw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal" title="公司名称" backgroundImage="color_normal">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="color_highlighted"/>
+                                            <connections>
+                                                <action selector="btnClick:" destination="Lcz-zL-fbf" eventType="touchUpInside" id="o9v-ai-ZdQ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="HyC-dm-HHI" firstAttribute="leading" secondItem="jeS-z0-iQQ" secondAttribute="leading" constant="15" id="5gI-Gz-Gqz"/>
+                                        <constraint firstItem="HyC-dm-HHI" firstAttribute="top" secondItem="jeS-z0-iQQ" secondAttribute="top" constant="10" id="B61-TC-u0T"/>
+                                        <constraint firstAttribute="trailing" secondItem="HyC-dm-HHI" secondAttribute="trailing" constant="15" id="MMr-ec-fH9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="button" destination="HyC-dm-HHI" id="QqF-aH-sEe"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5fG-BA-SXe" id="Xs8-Q8-cO4"/>
+                            <outlet property="delegate" destination="5fG-BA-SXe" id="eo7-Rn-UTj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="办税" id="cal-kh-F4q"/>
+                    <connections>
+                        <outlet property="btnFooter" destination="ZG2-ol-mqN" id="sdc-AX-GGw"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RYl-tx-yP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="481"/>
+        </scene>
+        <!--办税-->
+        <scene sceneID="VWJ-dV-PCp">
+            <objects>
+                <navigationController id="10d-SE-k2d" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="办税" image="tabbar_item5" id="Ksg-kT-iWk">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="tabbar_item5_selected"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8NR-z7-9rO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5fG-BA-SXe" kind="relationship" relationship="rootViewController" id="xlh-GG-lh4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yEf-bX-JQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-200" y="481"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="color_highlighted" width="1" height="1"/>
+        <image name="color_normal" width="1" height="1"/>
+        <image name="tabbar_item5" width="24" height="24"/>
+        <image name="tabbar_item5_selected" width="24" height="24"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

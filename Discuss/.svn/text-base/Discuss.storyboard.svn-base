@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ija-zu-5fC">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--财务交流圈-->
+        <scene sceneID="P6g-Dn-uL1">
+            <objects>
+                <tableViewController storyboardIdentifier="DiscussViewController" id="Ija-zu-5fC" customClass="DiscussViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="125" sectionHeaderHeight="22" sectionFooterHeight="22" id="AVr-IW-OmO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Ija-zu-5fC" id="jas-Kk-1f7"/>
+                            <outlet property="delegate" destination="Ija-zu-5fC" id="53e-f1-qme"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="财务交流圈" id="vH3-Xr-3lW">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="1OQ-5X-sps">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ggf-mn-HV2">
+                                <rect key="frame" x="16" y="7" width="60" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="contentEdgeInsets" minX="-15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title=" 吐槽" image="nav_btnNew"/>
+                                <connections>
+                                    <segue destination="Ahv-RY-Qk3" kind="push" identifier="NewDiscussSegue" id="JVj-8U-kdn"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Ndt-hs-ibH">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3Tx-7u-MtM">
+                                <rect key="frame" x="254" y="10" width="51" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="搜索" image="nav_btnSearch"/>
+                                <connections>
+                                    <segue destination="u2s-5X-QFg" kind="custom" identifier="SearchSegue" customClass="RBStoryboardPushSegue" id="aZS-TG-ZUu"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="btnNavLeft" destination="3Tx-7u-MtM" id="WIT-pd-eZd"/>
+                        <outlet property="btnNavRight" destination="3Tx-7u-MtM" id="oEF-RV-EfT"/>
+                        <outlet property="leftBarButtonItem" destination="1OQ-5X-sps" id="7Wt-cT-qnI"/>
+                        <outlet property="rightBarButtonItem" destination="Ndt-hs-ibH" id="DcI-EG-Xgj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DDU-BQ-erL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="407"/>
+        </scene>
+        <!--吐槽-->
+        <scene sceneID="MPL-HE-WzM">
+            <objects>
+                <viewController storyboardIdentifier="NewDiscussViewController" hidesBottomBarWhenPushed="YES" id="Ahv-RY-Qk3" customClass="NewDiscussViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UOQ-xB-Rna"/>
+                        <viewControllerLayoutGuide type="bottom" id="bDu-GL-OzS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dBI-af-Xx3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrX-AJ-p3x" customClass="SZTextView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="不吐不快！赶紧的说两句......"/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="yrX-AJ-p3x" secondAttribute="bottom" id="1IZ-Bv-Ipk"/>
+                            <constraint firstAttribute="trailing" secondItem="yrX-AJ-p3x" secondAttribute="trailing" id="LPJ-s5-81d"/>
+                            <constraint firstItem="yrX-AJ-p3x" firstAttribute="leading" secondItem="dBI-af-Xx3" secondAttribute="leading" id="sEQ-Bd-PbR"/>
+                            <constraint firstItem="yrX-AJ-p3x" firstAttribute="top" secondItem="UOQ-xB-Rna" secondAttribute="bottom" id="tB1-Xb-uAX"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="吐槽" id="cvU-o4-e5p">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="0nw-I5-y0L">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="R6E-1A-m43">
+                                <rect key="frame" x="254" y="10" width="51" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="发布" image="nav_btnSubmit"/>
+                                <connections>
+                                    <action selector="btnSubmitClick:" destination="Ahv-RY-Qk3" eventType="touchUpInside" id="vVa-Ej-UbG"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bottomSpace" destination="1IZ-Bv-Ipk" id="zjD-Ma-qSm"/>
+                        <outlet property="textView" destination="yrX-AJ-p3x" id="OUa-ed-T13"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EfX-Fj-zJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="672" y="407"/>
+        </scene>
+        <!--交流-->
+        <scene sceneID="d7V-I3-ne8">
+            <objects>
+                <navigationController id="eEd-0i-SaZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="交流" image="tabbar_item3" id="u0m-FG-NdJ">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="tabbar_item3_selected"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pqc-RO-5z4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ija-zu-5fC" kind="relationship" relationship="rootViewController" id="953-VW-WYm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pgg-BS-Xwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-299" y="407"/>
+        </scene>
+        <!--Storyboard Link-->
+        <scene sceneID="8cb-St-Jcc">
+            <objects>
+                <viewController id="u2s-5X-QFg" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="93Y-jN-t9s"/>
+                        <viewControllerLayoutGuide type="bottom" id="OKe-yE-5jo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AFH-4u-qg8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="Search"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="sceneIdentifier" value="SearchViewController"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CQ3-Au-CSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="672" y="-210"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="nav_btnNew" width="24" height="24"/>
+        <image name="nav_btnSearch" width="24" height="24"/>
+        <image name="nav_btnSubmit" width="24" height="24"/>
+        <image name="tabbar_item3" width="24" height="24"/>
+        <image name="tabbar_item3_selected" width="24" height="24"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

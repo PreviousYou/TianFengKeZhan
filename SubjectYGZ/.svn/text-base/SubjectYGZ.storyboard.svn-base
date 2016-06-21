@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--营改增专栏-->
+        <scene sceneID="iWs-Zr-0gW">
+            <objects>
+                <tableViewController storyboardIdentifier="SubjectYGZViewController" hidesBottomBarWhenPushed="YES" id="yZS-Jh-ob3" customClass="SubjectYGZViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="86" sectionHeaderHeight="22" sectionFooterHeight="22" id="ttx-2b-vgV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="YGZAdCell" rowHeight="100" id="LuM-84-J7Z">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LuM-84-J7Z" id="qNu-2J-Yn9">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="YGZMetroCell" rowHeight="95" id="jrz-Du-jH8">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jrz-Du-jH8" id="u68-Gx-2eL">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yZS-Jh-ob3" id="WYa-3K-ZKS"/>
+                            <outlet property="delegate" destination="yZS-Jh-ob3" id="NDH-v6-qot"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="营改增专栏" id="Afg-vW-anf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVc-Xb-KTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="639" y="350"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Khd-6p-L6F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NBx-0d-A3b" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cSw-et-FS2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yZS-Jh-ob3" kind="relationship" relationship="rootViewController" id="JtK-ro-luz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QGC-e2-h4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="257" y="350"/>
+        </scene>
+        <!--营改增常见问题-->
+        <scene sceneID="0ht-mJ-qVN">
+            <objects>
+                <tableViewController storyboardIdentifier="YGZQuestionListViewController" id="jE8-Aq-Ctc" customClass="YGZQuestionListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="PDw-kc-C5s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="jE8-Aq-Ctc" id="hzU-8e-6aB"/>
+                            <outlet property="delegate" destination="jE8-Aq-Ctc" id="OCE-dr-LsE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="营改增常见问题" id="GgC-Nt-nAM">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="9jL-HC-wob">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="469-IO-Eb5">
+                                <rect key="frame" x="254" y="10" width="51" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="搜索" image="nav_btnSearch"/>
+                                <connections>
+                                    <segue destination="4sn-RI-l0n" kind="custom" identifier="SearchSegue" customClass="RBStoryboardPushSegue" id="WKh-eG-8FJ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="btnNavRight" destination="469-IO-Eb5" id="A2L-m7-Laf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hPK-fz-Z7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014" y="350"/>
+        </scene>
+        <!--软件操作解答-->
+        <scene sceneID="LEI-kh-Q1d">
+            <objects>
+                <viewController storyboardIdentifier="YGZSoftwareGuideViewController" id="b4r-Ta-yTH" customClass="YGZSoftwareGuideViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x9p-cf-jEa"/>
+                        <viewControllerLayoutGuide type="bottom" id="B47-Uc-vms"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hp0-zl-gYd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPO-1z-PAB" customClass="HPSegmentView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lp7-cE-Zy3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EPO-1z-PAB" firstAttribute="top" secondItem="x9p-cf-jEa" secondAttribute="bottom" id="CUv-oX-VeL"/>
+                            <constraint firstAttribute="trailing" secondItem="EPO-1z-PAB" secondAttribute="trailing" id="iIA-oC-go9"/>
+                            <constraint firstItem="EPO-1z-PAB" firstAttribute="leading" secondItem="hp0-zl-gYd" secondAttribute="leading" id="zsY-1z-j2R"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="软件操作解答" id="Z2g-cU-UKc">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Uuz-tu-0eG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DBz-QV-VlZ">
+                                <rect key="frame" x="254" y="10" width="51" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="搜索" image="nav_btnSearch"/>
+                                <connections>
+                                    <segue destination="4sn-RI-l0n" kind="custom" identifier="SearchSegue" customClass="RBStoryboardPushSegue" id="hYz-HO-nCk"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="hpSegmentView" destination="EPO-1z-PAB" id="wbf-2C-gRV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="53z-Ts-ZSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1354" y="350"/>
+        </scene>
+        <!--Storyboard Link-->
+        <scene sceneID="abu-8g-xvH">
+            <objects>
+                <viewController id="4sn-RI-l0n" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bwY-WA-6UZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="qQQ-VP-Wwz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="URG-DQ-x4X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="Search"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="sceneIdentifier" value="SearchViewController"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Vf-iu-R3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1354" y="-297"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="nav_btnSearch" width="24" height="24"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="WKh-eG-8FJ"/>
+    </inferredMetricsTieBreakers>
+</document>

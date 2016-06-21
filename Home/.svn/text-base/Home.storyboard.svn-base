@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PQg-Dm-z0R">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Storyboard Link-->
+        <scene sceneID="jbx-lG-YxH">
+            <objects>
+                <viewController id="zoN-lN-vO0" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JbN-FU-SmT"/>
+                        <viewControllerLayoutGuide type="bottom" id="BfG-7D-zhh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SAi-Yc-rp9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="UserCenter"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="sceneIdentifier" value="UserCenterViewController"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUO-Xl-OCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="501" y="-56"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="ZmM-lp-4te">
+            <objects>
+                <tableViewController id="PQg-Dm-z0R" customClass="HomeViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WUp-fM-WyI">
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeAdCell" rowHeight="140" id="E3i-cA-SwK">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E3i-cA-SwK" id="Tp1-WV-7u2">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeMetroCell" rowHeight="72" id="TNZ-n3-5uk">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TNZ-n3-5uk" id="oaf-gz-HXc">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="PQg-Dm-z0R" id="FJg-N8-bdn"/>
+                            <outlet property="delegate" destination="PQg-Dm-z0R" id="tEp-wC-a2h"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Rjy-Qe-XUX">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="eqi-cq-Ke5">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ATb-kA-CZ7">
+                                <rect key="frame" x="16" y="8" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="nav_btnUserCenter"/>
+                                <connections>
+                                    <segue destination="zoN-lN-vO0" kind="custom" identifier="UserCenterSegue" customClass="RBStoryboardPushSegue" id="o1o-iF-bAo"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ZO0-ss-a3K">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MBI-nz-Fob">
+                                <rect key="frame" x="254" y="10" width="51" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="搜索" image="nav_btnSearch"/>
+                                <connections>
+                                    <segue destination="igY-65-1WX" kind="custom" identifier="SearchSegue" customClass="RBStoryboardPushSegue" id="hPm-Qj-lbv"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnNavLeft" destination="ATb-kA-CZ7" id="rwy-hN-tnf"/>
+                        <outlet property="leftBarButonItem" destination="eqi-cq-Ke5" id="j1f-uy-Xva"/>
+                        <outlet property="rightBarBtttonItem" destination="ZO0-ss-a3K" id="JZ4-w8-VIf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qRk-99-RbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="501" y="574"/>
+        </scene>
+        <!--Storyboard Link-->
+        <scene sceneID="Fvs-pc-USg">
+            <objects>
+                <viewController id="igY-65-1WX" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YcC-pg-a9Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="sgr-54-aMt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hkc-X6-Z5S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="Search"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="sceneIdentifier" value="SearchViewController"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xh6-XJ-O3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="574"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="iRN-6f-LFm">
+            <objects>
+                <navigationController id="fNX-O8-E3y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="tabbar_item1" id="cna-26-XEu">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="tabbar_item1_selected"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ppu-Kx-4LK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PQg-Dm-z0R" kind="relationship" relationship="rootViewController" id="mz4-Wm-BwN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ux7-UG-qqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39" y="574"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="nav_btnSearch" width="24" height="24"/>
+        <image name="nav_btnUserCenter" width="24" height="24"/>
+        <image name="tabbar_item1" width="24" height="24"/>
+        <image name="tabbar_item1_selected" width="24" height="24"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
